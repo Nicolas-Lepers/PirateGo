@@ -60,7 +60,7 @@ public class SwipeDetection : MonoBehaviour
             Debug.DrawLine(_startPosition, _endPosition, Color.red, 5f);
             Vector3 direction = _endPosition - _startPosition;
             Vector2 direction2D = new Vector2(direction.x, direction.y).normalized;
-            PlayerController.Instance.Move(PlayerController.Instance.SwipeDirection(direction2D, _directionThreshold));
+            PlayerController.Instance.Move(PlayerController.Instance. SwipeDirection(direction2D, _directionThreshold));
         }
     }
 }

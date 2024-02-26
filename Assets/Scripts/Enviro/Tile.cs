@@ -3,7 +3,8 @@ using UnityEngine;
 public enum TileType
 {
     Ground,
-    Wall
+    Wall,
+    WallGround
 }
 
 namespace Movement
