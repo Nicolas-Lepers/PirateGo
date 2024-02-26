@@ -9,11 +9,16 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        Init(transform.position,Vector3.forward);
     }
     public void Init(Vector3 position, Vector3 direction)
     {
         gameObject.transform.position = position;
+
+        transform.rotation = Quaternion.LookRotation(direction);
+        var rota = transform.localEulerAngles;
+        rota.x = 90;
+        transform.localEulerAngles = rota;
+
         _rb.velocity = Vector3.zero;
         gameObject.SetActive(true);
         _rb.AddForce(direction * _bulletForce);
