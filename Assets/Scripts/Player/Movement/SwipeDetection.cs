@@ -4,7 +4,7 @@ public class SwipeDetection : MonoBehaviour
 {
     [SerializeField] private float _minimumDistance = 0.2f;
     [SerializeField] private float _maximumTime = 1f;
-    [SerializeField][Range(0f, 1f)] private float _directionThreshold = 1;
+    [SerializeField] private float _directionThreshold = 1;
     
     private InputManager _inputManager;
     
