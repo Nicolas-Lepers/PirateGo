@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour, IHitable
 
     public void Execute()
     {
-        Timer timer = new Timer();
+        Timer timer = this.gameObject.AddComponent<Timer>();
         StartCoroutine(timer.Disable(1, this.gameObject));
         Debug.Log("hit enemy");
     }
