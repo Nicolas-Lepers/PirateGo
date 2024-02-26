@@ -8,5 +8,6 @@ namespace Movement
         public List<Tile> NeightborTiles;
         public bool IsAccessible;
         public bool HasEnemy;
+        public bool HasLever;
     }
 }

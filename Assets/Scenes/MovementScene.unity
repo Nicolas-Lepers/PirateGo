@@ -396,6 +396,7 @@ MonoBehaviour:
   NeightborTiles: []
   IsAccessible: 1
   HasEnemy: 0
+  HasLever: 0
 --- !u!1 &205110311
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +553,68 @@ MonoBehaviour:
   NeightborTiles: []
   IsAccessible: 1
   HasEnemy: 0
+  HasLever: 0
+--- !u!1 &916025493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916025496}
+  - component: {fileID: 916025495}
+  - component: {fileID: 916025494}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &916025494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916025493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc59cbea446aa241b2077f100ba3fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minimumDistance: 0.2
+  _maximumTime: 1
+  _directionThreshold: 0.9
+--- !u!114 &916025495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916025493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939db53d0f348e04a83261bb3374e033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 105834355}
+--- !u!4 &916025496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916025493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16470265, y: 0.54574335, z: 2.4027388}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003197672
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +736,7 @@ MonoBehaviour:
   NeightborTiles: []
   IsAccessible: 1
   HasEnemy: 0
+  HasLever: 0
 --- !u!1 &1596586617
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +1034,7 @@ MonoBehaviour:
   NeightborTiles: []
   IsAccessible: 1
   HasEnemy: 0
+  HasLever: 0
 --- !u!1001 &1959792689645571772
 PrefabInstance:
   m_ObjectHideFlags: 0
