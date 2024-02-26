@@ -51,7 +51,10 @@ public class PlayerController : MonoBehaviour
             else if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
             {
                 Debug.Log("Swipe Right");
-                return CurrentTile.RightTile;
+                if (CurrentTile.RightTile != null)
+                    return CurrentTile.RightTile;
+                else
+                    return CurrentTile.BackwardTile;
             }
         }
         else if (CurrentTile.Type == TileType.Wall)
@@ -64,7 +67,7 @@ public class PlayerController : MonoBehaviour
             else if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
             {
                 Debug.Log("Swipe Down");
-                if(CurrentTile.DownTile != null)
+                if (CurrentTile.DownTile != null)
                     return CurrentTile.DownTile;
                 else
                     return CurrentTile.BackwardTile;
@@ -77,7 +80,7 @@ public class PlayerController : MonoBehaviour
             else if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
             {
                 Debug.Log("Swipe Right");
-                if(CurrentTile.RightTile != null)
+                if (CurrentTile.RightTile != null)
                     return CurrentTile.RightTile;
                 else
                     return CurrentTile.BackwardTile;
