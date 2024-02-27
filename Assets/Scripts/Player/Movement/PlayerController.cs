@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
         CurrentTile = InitialTile;
     }
 
+    private void Update()
+    {
+        transform.position = CurrentTile.Origin.transform.position;
+    }
+
     public Tile SwipeDirection(Vector2 direction, float _directionThreshold)
     {
         if (CurrentTile.Type == TileType.Ground)
