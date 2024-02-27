@@ -1,3 +1,4 @@
+using System;
 using Movement;
 using UnityEngine;
 
@@ -46,6 +47,35 @@ public class CheckerTile : MonoBehaviour
                     break;
                 case CheckerDirection.Backward:
                     _tileParent.BackwardTile = currentTile;
+                    break;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<Tile>())
+        {
+            Tile currentTile = other.GetComponent<Tile>();
+            switch (Direction)
+            {
+                case CheckerDirection.Up:
+                    _tileParent.UpTile = null;
+                    break;
+                case CheckerDirection.Down:
+                    _tileParent.DownTile = null;
+                    break;
+                case CheckerDirection.Left:
+                    _tileParent.LeftTile = null;
+                    break;
+                case CheckerDirection.Right:
+                    _tileParent.RightTile = null;
+                    break;
+                case CheckerDirection.Forward:
+                    _tileParent.ForwardTile = null;
+                    break;
+                case CheckerDirection.Backward:
+                    _tileParent.BackwardTile = null;
                     break;
             }
         }
