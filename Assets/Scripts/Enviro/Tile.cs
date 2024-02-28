@@ -27,5 +27,13 @@ namespace Movement
         [Header("Wall Tiles Properties")]
         public Tile UpTile;
         public Tile DownTile;
+
+
+        public void SetHasEnemy(bool value)
+        {
+            HasEnemy = value;
+            IsAccessible = !value;
+        }
+
     }
 }
