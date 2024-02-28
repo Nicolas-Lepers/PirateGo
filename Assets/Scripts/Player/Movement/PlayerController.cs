@@ -148,13 +148,10 @@ public class PlayerController : MonoBehaviour
 
     private void SetNewTile(Tile newTile)
     {
-        if (newTile == null) return;
-        if (newTile.IsAccessible == false) return;
-        if(_canMove == false) return;
+        if (newTile == null || newTile.IsAccessible == false || _canMove == false) return;
 
         _currentTile = newTile;
         
-        GameManager.Instance.MoveGame();
         RotatePlayer(newTile);
         
         StartCoroutine(MoveToTile(newTile));
@@ -179,6 +176,8 @@ public class PlayerController : MonoBehaviour
 
         transform.DOMove(newTile.Origin.position, _moveDelay);
         yield return new WaitForSeconds(_moveDelay);
+
+        GameManager.Instance.MoveGame();
 
         _isMoving = false;
     }
