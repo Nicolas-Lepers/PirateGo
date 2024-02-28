@@ -117,5 +117,7 @@ public class PlayerController : MonoBehaviour
         
         transform.position = nextTile.Origin.position;
         CurrentTile = nextTile;
+
+        GameManager.Instance.MoveGame();
     }
 }

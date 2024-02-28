@@ -45,8 +45,7 @@ public class Enemy : MonoBehaviour, IHitable
                 break;
             case Behaviour.Moving:
                 {
-                    int nextPath = (_currentPath + 1) % _path.Count;
-                    _currentPath = nextPath;
+                    _currentPath = (_currentPath + 1) % _path.Count;
 
                     var target = _path[_currentPath];
                     var position = this.transform.position;
