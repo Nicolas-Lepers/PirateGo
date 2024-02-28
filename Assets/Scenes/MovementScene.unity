@@ -3528,8 +3528,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdf0f968b8bc014e99e327019dbc504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canMove: 0
+  _isMoving: 0
   InitialTile: {fileID: 783524617}
-  CurrentTile: {fileID: 0}
+  _groundMoveDelay: 0.5
+  _wallMoveDelay: 0.5
+  _wallGroundMoveDelay: 0.5
+  moveDelay: 0
 --- !u!4 &1651375853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4454872775745716286, guid: 44bb5a4a0bb37314f99df81d4584d48b,

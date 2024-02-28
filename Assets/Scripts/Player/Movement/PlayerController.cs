@@ -1,12 +1,24 @@
+using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 using Movement;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
 
-    public Tile InitialTile;
-    public Tile CurrentTile;
+    [Header("Properties")]
+    [SerializeField] private bool _canMove;
+    [SerializeField] private bool _isMoving;
+
+    [Header("Tile")] public Tile InitialTile;
+    private Tile _currentTile;
+
+    [Header("Movement Delay")] [SerializeField]
+    private float _groundMoveDelay;
+
+    [SerializeField] private float _wallMoveDelay;
+    [SerializeField] private float _wallGroundMoveDelay;
 
     private void Awake()
     {
@@ -23,99 +35,151 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         transform.position = InitialTile.Origin.position;
-        CurrentTile = InitialTile;
+        _currentTile = InitialTile;
     }
 
     private void Update()
     {
-        transform.position = CurrentTile.Origin.transform.position;
+        _canMove = !_isMoving;
+
+        if (_isMoving == false)
+            transform.position = _currentTile.Origin.transform.position;
     }
+
+    #region Swipe Direction
 
     public void SwipeDirection(Vector2 direction, float _directionThreshold)
     {
-        switch (CurrentTile.Type)
+        switch (_currentTile.Type)
         {
             case TileType.Ground:
-                Move(SwipeFromGround(direction, _directionThreshold));
+                SetNewTile(SwipeFromGround(direction, _directionThreshold));
                 break;
             case TileType.Wall:
-                Move(SwipeFromWall(direction, _directionThreshold));
+                SetNewTile(SwipeFromWall(direction, _directionThreshold));
                 break;
             case TileType.WallGround:
-                Move(SwipeFromWallGround(direction, _directionThreshold));
+                SetNewTile(SwipeFromWallGround(direction, _directionThreshold));
                 break;
         }
     }
-    
+
     private Tile SwipeFromGround(Vector2 direction, float _directionThreshold)
     {
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
-           return CurrentTile.ForwardTile;
+            return _currentTile.ForwardTile;
         }
+
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
-           return CurrentTile.BackwardTile;
+            return _currentTile.BackwardTile;
         }
+
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
-            return CurrentTile.LeftTile;
+            return _currentTile.LeftTile;
         }
+
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
-            return CurrentTile.RightTile;
+            return _currentTile.RightTile;
         }
 
         return null;
     }
+
     private Tile SwipeFromWall(Vector2 direction, float _directionThreshold)
     {
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
-           return CurrentTile.UpTile;
+            return _currentTile.UpTile;
         }
+
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
-            return CurrentTile.DownTile != null ? CurrentTile.DownTile : CurrentTile.BackwardTile;
+            return _currentTile.DownTile != null ? _currentTile.DownTile : _currentTile.BackwardTile;
         }
+
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
-           return CurrentTile.LeftTile;
+            return _currentTile.LeftTile;
         }
+
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
-           return CurrentTile.RightTile;
+            return _currentTile.RightTile;
         }
 
         return null;
     }
+
     private Tile SwipeFromWallGround(Vector2 direction, float _directionThreshold)
     {
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
-           return CurrentTile.ForwardTile;
+            return _currentTile.ForwardTile;
         }
+
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
-           return CurrentTile.BackwardTile;
+            return _currentTile.BackwardTile;
         }
+
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
-            return CurrentTile.LeftTile;
+            return _currentTile.LeftTile;
         }
+
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
-          return CurrentTile.DownTile;
+            return _currentTile.DownTile;
         }
 
         return null;
     }
 
-    private void Move(Tile nextTile)
+    #endregion
+
+    #region Move
+
+    private void SetNewTile(Tile newTile)
     {
-        if (nextTile == null) return;
-        
-        transform.position = nextTile.Origin.position;
-        CurrentTile = nextTile;
+        if (newTile == null) return;
+        if (newTile.IsAccessible == false) return;
+        if(_canMove == false) return;
+
+        _currentTile = newTile;
+
+        StartCoroutine(MoveToTile(newTile));
     }
+
+    public float moveDelay = 0f;
+
+    private IEnumerator MoveToTile(Tile newTile)
+    {
+        _isMoving = true;
+
+        //float moveDelay = 0f;
+
+        switch (newTile.Type)
+        {
+            case TileType.Ground:
+                moveDelay = _groundMoveDelay;
+                break;
+            case TileType.Wall:
+                moveDelay = _wallMoveDelay;
+                break;
+            case TileType.WallGround:
+                moveDelay = _wallGroundMoveDelay;
+                break;
+        }
+
+        transform.DOMove(newTile.Origin.position, moveDelay);
+        yield return new WaitForSeconds(moveDelay);
+
+        _isMoving = false;
+    }
+
+    #endregion
 }
