@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Movement;
 using UnityEngine;
+using Movement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,90 +31,91 @@ public class PlayerController : MonoBehaviour
         transform.position = CurrentTile.Origin.transform.position;
     }
 
-    public Tile SwipeDirection(Vector2 direction, float _directionThreshold)
+    public void SwipeDirection(Vector2 direction, float _directionThreshold)
     {
-        if (CurrentTile.Type == TileType.Ground)
+        switch (CurrentTile.Type)
         {
-            if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Forward");
-                return CurrentTile.ForwardTile;
-            }
-            else if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe BackWard");
-                return CurrentTile.BackwardTile;
-            }
-            else if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Left");
-                return CurrentTile.LeftTile;
-            }
-            else if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Right");
-                return CurrentTile.RightTile;
-            }
+            case TileType.Ground:
+                Move(SwipeFromGround(direction, _directionThreshold));
+                break;
+            case TileType.Wall:
+                Move(SwipeFromWall(direction, _directionThreshold));
+                break;
+            case TileType.WallGround:
+                Move(SwipeFromWallGround(direction, _directionThreshold));
+                break;
         }
-        else if (CurrentTile.Type == TileType.Wall)
+    }
+    
+    private Tile SwipeFromGround(Vector2 direction, float _directionThreshold)
+    {
+        if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
-            if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Up");
-                return CurrentTile.UpTile;
-            }
-            else if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Down");
-                if (CurrentTile.DownTile != null)
-                    return CurrentTile.DownTile;
-                else
-                    return CurrentTile.BackwardTile;
-            }
-            else if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Left");
-                return CurrentTile.LeftTile;
-            }
-            else if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Right");
-                return CurrentTile.RightTile;
-            }
+           return CurrentTile.ForwardTile;
         }
-        else if (CurrentTile.Type == TileType.WallGround)
+        if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
-            if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Forward");
-                return CurrentTile.ForwardTile;
-            }
-            else if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe BackWard");
-                return CurrentTile.BackwardTile;
-            }
-            else if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Left");
-                return CurrentTile.LeftTile;
-            }
-            else if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
-            {
-                Debug.Log("Swipe Right");
-                return CurrentTile.DownTile;
-            }
+           return CurrentTile.BackwardTile;
+        }
+        if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
+        {
+            return CurrentTile.LeftTile;
+        }
+        if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
+        {
+            return CurrentTile.RightTile;
+        }
+
+        return null;
+    }
+    private Tile SwipeFromWall(Vector2 direction, float _directionThreshold)
+    {
+        if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
+        {
+           return CurrentTile.UpTile;
+        }
+        if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
+        {
+            return CurrentTile.DownTile != null ? CurrentTile.DownTile : CurrentTile.BackwardTile;
+        }
+        if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
+        {
+           return CurrentTile.LeftTile;
+        }
+        if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
+        {
+           return CurrentTile.RightTile;
+        }
+
+        return null;
+    }
+    private Tile SwipeFromWallGround(Vector2 direction, float _directionThreshold)
+    {
+        if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
+        {
+           return CurrentTile.ForwardTile;
+        }
+        if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
+        {
+           return CurrentTile.BackwardTile;
+        }
+        if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
+        {
+            return CurrentTile.LeftTile;
+        }
+        if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
+        {
+          return CurrentTile.DownTile;
         }
 
         return null;
     }
 
-    public void Move(Tile nextTile)
+    private void Move(Tile nextTile)
     {
-        if (nextTile != null)
-        {
-            transform.position = nextTile.Origin.position;
-            CurrentTile = nextTile;
-        }
+        if (nextTile == null) return;
+        
+        transform.position = nextTile.Origin.position;
+        CurrentTile = nextTile;
     }
 }

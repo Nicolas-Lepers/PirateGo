@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-
 public class MovingTile : MonoBehaviour
 {
     public List<Transform> Waypoints;
@@ -20,7 +19,7 @@ public class MovingTile : MonoBehaviour
         StartCoroutine(MovePlatform(Waypoints[_waypointIndex]));
     }
 
-    IEnumerator MovePlatform(Transform waypoint)
+    private IEnumerator MovePlatform(Transform waypoint)
     {
         transform.DOMove(waypoint.position, Duration);
         yield return new WaitForSeconds(Duration);
