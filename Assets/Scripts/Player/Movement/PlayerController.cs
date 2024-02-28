@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float _wallMoveDelay;
     [SerializeField] private float _wallGroundMoveDelay;
-
+    private float _moveDelay;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -154,29 +155,25 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(MoveToTile(newTile));
     }
 
-    public float moveDelay = 0f;
-
     private IEnumerator MoveToTile(Tile newTile)
     {
         _isMoving = true;
 
-        //float moveDelay = 0f;
-
         switch (newTile.Type)
         {
             case TileType.Ground:
-                moveDelay = _groundMoveDelay;
+                _moveDelay = _groundMoveDelay;
                 break;
             case TileType.Wall:
-                moveDelay = _wallMoveDelay;
+                _moveDelay = _wallMoveDelay;
                 break;
             case TileType.WallGround:
-                moveDelay = _wallGroundMoveDelay;
+                _moveDelay = _wallGroundMoveDelay;
                 break;
         }
 
-        transform.DOMove(newTile.Origin.position, moveDelay);
-        yield return new WaitForSeconds(moveDelay);
+        transform.DOMove(newTile.Origin.position, _moveDelay);
+        yield return new WaitForSeconds(_moveDelay);
 
         _isMoving = false;
     }
