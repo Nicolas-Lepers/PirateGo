@@ -5,6 +5,7 @@ using Movement;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
     public static PlayerController Instance;
 
     [Header("Properties")]
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _wallMoveDelay;
     [SerializeField] private float _wallGroundMoveDelay;
     private float _moveDelay;
+    #endregion
     
     private void Awake()
     {
@@ -151,7 +153,10 @@ public class PlayerController : MonoBehaviour
         if(_canMove == false) return;
 
         _currentTile = newTile;
-
+        
+        GameManager.Instance.MoveGame();
+        RotatePlayer(newTile);
+        
         StartCoroutine(MoveToTile(newTile));
     }
 
@@ -178,5 +183,12 @@ public class PlayerController : MonoBehaviour
         _isMoving = false;
     }
 
+    #endregion
+    
+    #region Rotate
+    private void RotatePlayer(Tile newTile)
+    {
+        transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, newTile.transform.position.z));
+    }
     #endregion
 }
