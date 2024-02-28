@@ -3998,6 +3998,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3385777400257980475, guid: 2291705776776214fbcd628ad9a56594,
+        type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3385777400257980475, guid: 2291705776776214fbcd628ad9a56594,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.78
+      objectReference: {fileID: 0}
     - target: {fileID: 4618394795560378838, guid: 2291705776776214fbcd628ad9a56594,
         type: 3}
       propertyPath: _rotateLeft
@@ -4073,7 +4083,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8779100215275685843, guid: 2291705776776214fbcd628ad9a56594,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.79
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3385777400257980475, guid: 2291705776776214fbcd628ad9a56594, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4930,6 +4946,11 @@ PrefabInstance:
       propertyPath: InitialTile
       value: 
       objectReference: {fileID: 783524617}
+    - target: {fileID: 3900325225737460407, guid: 44bb5a4a0bb37314f99df81d4584d48b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4454872775745716286, guid: 44bb5a4a0bb37314f99df81d4584d48b,
         type: 3}
       propertyPath: m_RootOrder
