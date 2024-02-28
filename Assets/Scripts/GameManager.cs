@@ -12,9 +12,12 @@ public class GameManager : MonoBehaviour
 
     public PlayerAttack PlayerTempRef;
 
+    [HideInInspector]public List<Enemy> Enemies = new List<Enemy>();
+
+
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -22,5 +25,16 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Instance already exist");
         }
+    }
+
+
+    public void MoveGame()
+    {
+        #region Enemy
+        foreach (var enemy in Enemies)
+        {
+            enemy.Move();
+        }
+        #endregion
     }
 }
