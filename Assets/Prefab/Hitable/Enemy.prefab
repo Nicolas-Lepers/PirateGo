@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8779100215275685843}
-  - component: {fileID: 3385777400257980475}
+  - component: {fileID: 59941644491115981}
   - component: {fileID: 4480038710211583400}
   m_Layer: 0
   m_Name: FOV
@@ -109,8 +109,8 @@ Transform:
   m_Father: {fileID: 7469639222346175449}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3385777400257980475
-CapsuleCollider:
+--- !u!65 &59941644491115981
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,11 +127,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.5
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -0.5}
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 0.4, z: 1.8}
+  m_Center: {x: 0, y: -0.41, z: -0.48}
 --- !u!114 &4480038710211583400
 MonoBehaviour:
   m_ObjectHideFlags: 0
