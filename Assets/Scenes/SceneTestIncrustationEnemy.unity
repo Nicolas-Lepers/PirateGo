@@ -4008,6 +4008,16 @@ PrefabInstance:
       propertyPath: BehaviourState
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4618394795560378838, guid: 2291705776776214fbcd628ad9a56594,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618394795560378838, guid: 2291705776776214fbcd628ad9a56594,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 543604840}
     - target: {fileID: 7469639222346175449, guid: 2291705776776214fbcd628ad9a56594,
         type: 3}
       propertyPath: m_RootOrder
