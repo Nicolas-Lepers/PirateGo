@@ -6,10 +6,12 @@ using Movement;
 public class PlayerController : MonoBehaviour
 {
     #region Variables
+
     public static PlayerController Instance;
 
-    [Header("Properties")]
-    [SerializeField] private bool _canMove;
+    [Header("Properties")] [SerializeField]
+    private bool _canMove;
+
     [SerializeField] private bool _isMoving;
 
     [Header("Tile")] public Tile InitialTile;
@@ -21,8 +23,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _wallMoveDelay;
     [SerializeField] private float _wallGroundMoveDelay;
     private float _moveDelay;
+
     #endregion
-    
+
     private void Awake()
     {
         if (Instance == null)
@@ -151,9 +154,9 @@ public class PlayerController : MonoBehaviour
         if (newTile == null || newTile.IsAccessible == false || _canMove == false) return;
 
         _currentTile = newTile;
-        
+
         RotatePlayer(newTile);
-        
+
         StartCoroutine(MoveToTile(newTile));
     }
 
@@ -183,11 +186,22 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-    
+
     #region Rotate
+
     private void RotatePlayer(Tile newTile)
     {
-        transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, newTile.transform.position.z));
+        if (newTile.Type == TileType.Ground || newTile.Type == TileType.WallGround)
+        {
+            transform.LookAt(new Vector3(newTile.Origin.transform.position.x, transform.position.y,
+                newTile.Origin.transform.position.z));
+        }
+        else if (newTile.Type == TileType.Wall)
+        {
+            transform.LookAt(new Vector3(newTile.transform.position.x, newTile.transform.position.y,
+                newTile.transform.position.z));
+        }
     }
+
     #endregion
 }
