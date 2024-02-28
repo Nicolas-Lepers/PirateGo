@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public IEnumerator Disable(float time,GameObject go)
+    public IEnumerator Execute(float time, Action action)
     {
         yield return new WaitForSeconds(time);
-        go.SetActive(false);
+
+        action?.Invoke();
 
         Destroy(this);
     }
