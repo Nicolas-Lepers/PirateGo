@@ -73,6 +73,8 @@ MonoBehaviour:
   BehaviourState: 0
   _rotateLeft: 0
   _path: []
+  DoAction: 1
+  _moveTime: 0.5
 --- !u!1 &8169985008696094480
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd54805b8966e6849973060da77d8b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemy: {fileID: 4618394795560378838}
 --- !u!1 &8712245486042138786
 GameObject:
   m_ObjectHideFlags: 0
