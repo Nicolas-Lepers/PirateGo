@@ -1,3 +1,5 @@
+using DG.Tweening;
+using Movement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +15,14 @@ public class Enemy : MonoBehaviour, IHitable
     [SerializeField] List<Transform> _path = new List<Transform>();
     private int _currentPath = 0;
     private Vector3 _offsetPosition;
+    public bool DoAction = true;
+
+    [SerializeField, Tooltip("For the time of move animation")] float _moveTime;
     private void Start()
     {
-        if (_currentPath < _path.Count)
+        if (_currentPath <= _path.Count)
         {
+            _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(true);
             _offsetPosition = this.transform.position - _path[_currentPath].position;
         }
 
@@ -25,6 +31,11 @@ public class Enemy : MonoBehaviour, IHitable
 
     public void Move()
     {
+        if (DoAction == false)
+        {
+            return;
+        }
+
         switch (BehaviourState)
         {
             case Behaviour.Rotating:
@@ -45,33 +56,41 @@ public class Enemy : MonoBehaviour, IHitable
                 break;
             case Behaviour.Moving:
                 {
+                    _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(false);
+
                     _currentPath = (_currentPath + 1) % _path.Count;
 
                     var target = _path[_currentPath];
-                    var position = this.transform.position;
-                    position = target.position;
-                    position += _offsetPosition;
+                    _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(true);
 
-                    this.transform.position = position;
+                    transform.DOMove(target.position + _offsetPosition, _moveTime);
 
-
-                    var nextTarget = _path[(_currentPath + 1) % _path.Count];
-
-                    transform.LookAt(nextTarget);
-                    Vector3 eulerAngles = transform.rotation.eulerAngles;
-                    eulerAngles.x = 0;
-                    eulerAngles.z = 0;
-                    transform.rotation = Quaternion.Euler(eulerAngles);
-
+                    StartCoroutine(RotateVisual(_moveTime));
                 }
                 break;
         }
     }
+    private IEnumerator RotateVisual(float time)
+    {
+        yield return new WaitForSeconds(time);
+        var nextTarget = _path[(_currentPath + 1) % _path.Count];
 
+        transform.LookAt(nextTarget);
+        Vector3 eulerAngles = transform.rotation.eulerAngles;
+        eulerAngles.x = 0;
+        eulerAngles.z = 0;
+        transform.rotation = Quaternion.Euler(eulerAngles);
+    }
     public void Execute()
     {
         Timer timer = this.gameObject.AddComponent<Timer>();
-        StartCoroutine(timer.Disable(1, this.gameObject));
+        StartCoroutine(timer.Execute(1, Disable));
         Debug.Log("hit enemy");
+    }
+    private void Disable()
+    {
+        this.gameObject.SetActive(false);
+        _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(false);
+
     }
 }
