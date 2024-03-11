@@ -177,6 +177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waypoints:
   - {fileID: 7250533274303293031}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Duration: 3
   _waypointIndex: 0
 --- !u!1 &1513757988534557584
