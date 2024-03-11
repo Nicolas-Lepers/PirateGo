@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour, IHitable
 
     public enum Behaviour { Static, Rotating, Moving }
 
-    public Behaviour BehaviourState;
+    [SerializeField] Behaviour _behaviourState;
     [SerializeField] bool _rotateLeft = false;
 
     [SerializeField] List<Transform> _path = new List<Transform>();
@@ -36,43 +36,37 @@ public class Enemy : MonoBehaviour, IHitable
             return;
         }
 
-        switch (BehaviourState)
+        switch (_behaviourState)
         {
             case Behaviour.Rotating:
                 {
-                    if (_rotateLeft == true)
-                    {
-                        var rotation = this.transform.eulerAngles;
-                        rotation.y += 90;
-                        this.transform.eulerAngles = rotation;
-                    }
-                    else
-                    {
-                        var rotation = this.transform.eulerAngles;
-                        rotation.y -= 90;
-                        this.transform.eulerAngles = rotation;
-                    }
+                    float valueRotate = _rotateLeft == true ? 90 : -90;
+
+                    var rotation = this.transform.eulerAngles;
+                    rotation.y += valueRotate;
+                    this.transform.eulerAngles = rotation;
                 }
                 break;
             case Behaviour.Moving:
                 {
-                    _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(false);
-
-                    _currentPath = (_currentPath + 1) % _path.Count;
-
-                    var target = _path[_currentPath];
-                    _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(true);
-
-                    transform.DOMove(target.position + _offsetPosition, _moveTime);
-
-                    StartCoroutine(RotateVisual(_moveTime));
+                    StartCoroutine(MoveAndRotate(_moveTime));
                 }
                 break;
         }
     }
-    private IEnumerator RotateVisual(float time)
+    private IEnumerator MoveAndRotate(float time)
     {
+        _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(false);
+
+        _currentPath = (_currentPath + 1) % _path.Count;
+
+        var target = _path[_currentPath];
+        _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(true);
+
+        transform.DOMove(target.position + _offsetPosition, _moveTime);
+
         yield return new WaitForSeconds(time);
+
         var nextTarget = _path[(_currentPath + 1) % _path.Count];
 
         transform.LookAt(nextTarget);
@@ -81,7 +75,7 @@ public class Enemy : MonoBehaviour, IHitable
         eulerAngles.z = 0;
         transform.rotation = Quaternion.Euler(eulerAngles);
     }
-    public void Execute()
+    public void Hit()
     {
         Timer timer = this.gameObject.AddComponent<Timer>();
         StartCoroutine(timer.Execute(1, Disable));
@@ -89,6 +83,7 @@ public class Enemy : MonoBehaviour, IHitable
     }
     private void Disable()
     {
+        GameManager.Instance.Enemies.Remove(this);
         this.gameObject.SetActive(false);
         _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(false);
 
