@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         _currentLevel = GameObject.Find(PlayerPrefs.GetString("CurrentLvl")) == null ?
             _firstLevel : GameObject.Find(PlayerPrefs.GetString("CurrentLvl"));
