@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour, IHitable
 {
-    public void Execute()
+    public void Hit()
     {
         Debug.Log("it's a target");
     }

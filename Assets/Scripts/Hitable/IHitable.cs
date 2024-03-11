@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IHitable
 {
-    public void Execute();
+    public void Hit();
 }
