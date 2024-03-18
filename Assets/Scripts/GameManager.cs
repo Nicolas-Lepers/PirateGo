@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public ManagerUI ManagerUIRef;
 
+    public MySceneManager SceneManagerRef;
+
     public Bullet BulletObject;
 
     public PlayerAttack PlayerTempRef;

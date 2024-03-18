@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
 
     public void SwipeDirection(Vector2 direction, float _directionThreshold)
     {
+        if (_atEnd == true) { return; }
+
         Debug.Log($"{direction} direction");
 
         switch (_currentTile.Type)
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private Tile SwipeFromGround(Vector2 direction, float _directionThreshold)
     {
+
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
             Debug.Log($"up");
@@ -108,6 +111,7 @@ public class PlayerController : MonoBehaviour
 
     private Tile SwipeFromWall(Vector2 direction, float _directionThreshold)
     {
+
         Debug.Log($"{Vector2.Dot(Vector2.right, direction)} up test");
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
@@ -138,7 +142,6 @@ public class PlayerController : MonoBehaviour
 
     private Tile SwipeFromWallGround(Vector2 direction, float _directionThreshold)
     {
-        Debug.Log($"{Vector2.Dot(Vector2.right, direction)} up test");
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
             Debug.Log($"up");
@@ -174,7 +177,12 @@ public class PlayerController : MonoBehaviour
     {
         if (newTile == null || newTile.IsAccessible == false || _canMove == false) return;
 
+        _atEnd = newTile.End;
+
         _currentTile = newTile;
+
+
+        StartCoroutine(gameObject.AddComponent<Timer>().Execute(1.5f, GameManager.Instance.SceneManagerRef.LoadNextScene));
 
         RotatePlayer(newTile);
 
