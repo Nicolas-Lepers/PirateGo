@@ -13,8 +13,9 @@ public class FOVEnemy : MonoBehaviour
         if (player != null)
         {
             _enemy.DoAction = false;
+            GameManager.Instance.Player.AnimatorRef.SetTrigger("death");
             Debug.Log("player dead");
-            GameManager.Instance.SceneManagerRef.ResetScene();
+            //GameManager.Instance.SceneManagerRef.ResetScene();
         }
     }
 }

@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
         _area.Target.Hit();
         _area.CanInteract(false);
         game.ManagerUIRef.WeaponMelee.interactable = false;
+        game.Player.AnimatorRef.SetTrigger("attack_sword");
     }
 
 
@@ -23,5 +24,6 @@ public class PlayerAttack : MonoBehaviour
         GameManager game = GameManager.Instance;
         game.BulletObject.Init(transform.position, game.PlayerTempRef.transform.forward);
         game.ManagerUIRef.WeaponRange.interactable = false;
+        game.Player.AnimatorRef.SetTrigger("attack_gun");
     }
 }

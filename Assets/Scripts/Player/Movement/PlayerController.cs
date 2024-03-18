@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _wallMoveDelay;
     [SerializeField] private float _wallGroundMoveDelay;
     private float _moveDelay;
-
+    public Animator AnimatorRef;
     #endregion
 
     private void Awake()
@@ -177,12 +177,14 @@ public class PlayerController : MonoBehaviour
     {
         if (newTile == null || newTile.IsAccessible == false || _canMove == false) return;
 
-        _atEnd = newTile.End;
-
+        if (newTile.End == true)
+        {
+            _atEnd = newTile.End;
+            StartCoroutine(gameObject.AddComponent<Timer>().Execute(1.5f, GameManager.Instance.SceneManagerRef.LoadNextScene));
+        }
         _currentTile = newTile;
 
 
-        StartCoroutine(gameObject.AddComponent<Timer>().Execute(1.5f, GameManager.Instance.SceneManagerRef.LoadNextScene));
 
         RotatePlayer(newTile);
 

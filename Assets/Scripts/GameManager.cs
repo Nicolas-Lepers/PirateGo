@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Bullet BulletObject;
 
     public PlayerAttack PlayerTempRef;
+    public PlayerController Player;
 
     [HideInInspector]public List<Enemy> Enemies = new List<Enemy>();
 

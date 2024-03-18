@@ -5,21 +5,45 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SceneTestIncrustationEnemy.unity
     guid: 5566b350325b78c4099ca7cb3cbf14bb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu/MenuSelection.unity
     guid: 499b0bbb5b1ff424b87c9aaafb1fd976
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu/Level01.unity
     guid: 67a354ebfcfa0ed49b7d6788508dc875
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu/Level02.unity
     guid: a8691286b6e990043bb1c9ad07674a06
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu/Level03.unity
     guid: 4d46f4df04fbfcc4796f72f9b4808a8b
+  - enabled: 1
+    path: Assets/Scenes/LD/LD_1.unity
+    guid: 9b4a556ccd34e2647953cec9fa05cd48
+  - enabled: 1
+    path: Assets/Scenes/LD/LD_2.unity
+    guid: 9b041ef15e096be4fa57a00d0c0568fb
+  - enabled: 1
+    path: Assets/Scenes/LD/LD_3.unity
+    guid: 9782c3d7051ae8149afc0404bf9a25f1
+  - enabled: 1
+    path: Assets/Scenes/LD/LD_4.unity
+    guid: 399cc2c352caa964a998903786a6008b
+  - enabled: 1
+    path: Assets/Scenes/LD/LD_5.unity
+    guid: ca38e263e9940bc43947c7c74f9e32a3
+  - enabled: 1
+    path: Assets/Scenes/LD/LD_6.unity
+    guid: 49f37435a89e20f4f918a0c4af0c1e42
+  - enabled: 1
+    path: Assets/Scenes/LD/LD_7.unity
+    guid: 4455aea391b0cd14fa3570b3fcec1417
+  - enabled: 1
+    path: Assets/Scenes/LD/LD_8.unity
+    guid: d9cbee6f36d2b1d4eafbee805c9c4c56
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: f3fa287fdf87fec448ce7b7fe9888a85, type: 2}

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2780381153503137967}
   - component: {fileID: 8793553423133112219}
+  - component: {fileID: 8600637679658020395}
   m_Layer: 0
   m_Name: Script
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8793553423133112219
 MonoBehaviour:
@@ -45,5 +46,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManagerUIRef: {fileID: 0}
+  SceneManagerRef: {fileID: 8600637679658020395}
   BulletObject: {fileID: 0}
   PlayerTempRef: {fileID: 0}
+  Enemies: []
+--- !u!114 &8600637679658020395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392022229961717328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb9e9311a1ec5a45a1df9135bfcb075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
