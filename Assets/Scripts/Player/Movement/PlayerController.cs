@@ -85,24 +85,30 @@ public class PlayerController : MonoBehaviour
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
             Debug.Log($"up");
+          
+            AnimatorRef.SetTrigger("walk");
+
             return _currentTile.ForwardTile;
         }
 
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
-            Debug.Log($"down");
+            AnimatorRef.SetTrigger("walk");
+            Debug.Log($"down"); 
             return _currentTile.BackwardTile;
         }
 
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
-            Debug.Log($"left");
+            AnimatorRef.SetTrigger("walk");
+            Debug.Log($"left"); 
             return _currentTile.LeftTile;
         }
 
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
-            Debug.Log($"right");
+            AnimatorRef.SetTrigger("walk");
+            Debug.Log($"right"); 
             return _currentTile.RightTile;
         }
 
@@ -115,24 +121,41 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"{Vector2.Dot(Vector2.right, direction)} up test");
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
+            AnimatorRef.SetBool("idle", !false);
+            AnimatorRef.SetBool("idle_grimp", !true);
+            AnimatorRef.SetTrigger("grimp");
+
             Debug.Log($"up");
             return _currentTile.UpTile;
         }
 
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
+            AnimatorRef.SetTrigger("grimp");
+            AnimatorRef.SetBool("idle_grimp", !true);
+            AnimatorRef.SetBool("idle", !false);
+
             Debug.Log($"down");
             return _currentTile.DownTile != null ? _currentTile.DownTile : _currentTile.BackwardTile;
         }
 
+
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
+            AnimatorRef.SetTrigger("grimp");
+            AnimatorRef.SetBool("idle_grimp", !true);
+            AnimatorRef.SetBool("idle", !false);
+
             Debug.Log($"left");
             return _currentTile.LeftTile;
         }
 
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
+            AnimatorRef.SetTrigger("grimp");
+            AnimatorRef.SetBool("idle_grimp", !true);
+            AnimatorRef.SetBool("idle", !false);
+
             Debug.Log($"right");
             return _currentTile.RightTile;
         }
@@ -144,25 +167,33 @@ public class PlayerController : MonoBehaviour
     {
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
-            Debug.Log($"up");
+            AnimatorRef.SetTrigger("walk");
+            Debug.Log($"up"); AnimatorRef.SetBool("idle_grimp", !true);
+            AnimatorRef.SetBool("idle", !false);
             return _currentTile.ForwardTile;
         }
 
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
-            Debug.Log($"down");
+            Debug.Log($"down"); AnimatorRef.SetBool("idle_grimp", !true);
+            AnimatorRef.SetBool("idle", !false);
+            AnimatorRef.SetTrigger("walk");
             return _currentTile.BackwardTile;
         }
 
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
-            Debug.Log($"left");
+            Debug.Log($"left"); AnimatorRef.SetBool("idle_grimp", !true);
+            AnimatorRef.SetBool("idle", !false);
+            AnimatorRef.SetTrigger("walk");
             return _currentTile.LeftTile;
         }
 
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
-            Debug.Log($"right");
+            AnimatorRef.SetTrigger("walk");
+            Debug.Log($"right"); AnimatorRef.SetBool("idle_grimp", !true);
+            AnimatorRef.SetBool("idle", !false);
             return _currentTile.DownTile;
         }
 
@@ -182,6 +213,8 @@ public class PlayerController : MonoBehaviour
             _atEnd = newTile.End;
             StartCoroutine(gameObject.AddComponent<Timer>().Execute(1.5f, GameManager.Instance.SceneManagerRef.LoadNextScene));
         }
+
+
         _currentTile = newTile;
 
 
