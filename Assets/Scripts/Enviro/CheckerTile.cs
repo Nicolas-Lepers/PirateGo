@@ -14,14 +14,21 @@ public enum CheckerDirection
 public class CheckerTile : MonoBehaviour
 {
     public CheckerDirection Direction;
-
+    [SerializeField] bool _disableSelf = true;
     private Tile _tileParent;
 
     private void Start()
     {
         _tileParent = GetComponentInParent<Tile>();
+        if(_disableSelf == true)
+        {
+            StartCoroutine(gameObject.AddComponent<Timer>().Execute(1, DisableSelf));
+        }
     }
-
+    private void DisableSelf()
+    {
+        Destroy(this.gameObject);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Tile>())

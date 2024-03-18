@@ -15,7 +15,7 @@ namespace Movement
 
         [Header("Properties")] public bool IsAccessible;
         public bool HasEnemy;
-        public bool HasLever;
+        public bool End;
 
         [Header("Origin")] public Transform Origin;
 
