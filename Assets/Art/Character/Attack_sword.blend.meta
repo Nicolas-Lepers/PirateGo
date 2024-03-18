@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5008209e34c3e141a5f0f43b2fd530a
+guid: 42ffb73e96b308a4ab31c3eda3c6c56e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Death
+      name: Attack_sword
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 1
-      lastFrame: 30
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -60,7 +60,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
