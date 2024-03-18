@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
     {
         GameManager game = GameManager.Instance;
         _area.Target.Hit();
+        _area.CanInteract(false);
         game.ManagerUIRef.WeaponMelee.interactable = false;
     }
 
