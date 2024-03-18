@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &33285336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -410,7 +411,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 890842269}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -574,6 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &82013010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -641,6 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &83435308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -798,7 +801,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 562598067}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -990,7 +993,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 2018697225}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -1092,6 +1095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &97110912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1249,7 +1253,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1014647256}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -1351,6 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &99593097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1846,6 +1851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &129273679
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1913,6 +1919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &141670758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1980,6 +1987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &144008833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2126,6 +2134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &182745873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2283,7 +2292,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 203533578}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -2385,6 +2394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &196623825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2525,7 +2535,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 2010850185}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -2888,6 +2898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &253071312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2955,6 +2966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &253608602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3022,6 +3034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &254622837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3184,17 +3197,17 @@ PrefabInstance:
     - target: {fileID: 4454872775745716286, guid: 44bb5a4a0bb37314f99df81d4584d48b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 51.09
+      value: 50.942997
       objectReference: {fileID: 0}
     - target: {fileID: 4454872775745716286, guid: 44bb5a4a0bb37314f99df81d4584d48b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.94
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 4454872775745716286, guid: 44bb5a4a0bb37314f99df81d4584d48b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -159.89
+      value: 47.82701
       objectReference: {fileID: 0}
     - target: {fileID: 4454872775745716286, guid: 44bb5a4a0bb37314f99df81d4584d48b,
         type: 3}
@@ -3300,6 +3313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &332753733
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3531,6 +3545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &379021930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3732,6 +3747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &422406540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3799,6 +3815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &425877543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3956,7 +3973,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1796276065}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -4058,6 +4075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &456739759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4235,6 +4253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &489906341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4392,7 +4411,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 627188155}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -4494,6 +4513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &546916775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4561,6 +4581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &550652043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4628,6 +4649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &551952965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4726,6 +4748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &565231809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4793,6 +4816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &571832382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5229,7 +5253,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 771827497}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -5398,6 +5422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &623589806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5527,6 +5552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &647936665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5594,6 +5620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &654133789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5661,6 +5688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &655292278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5843,6 +5871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &696973390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5895,6 +5924,79 @@ Transform:
   m_Father: {fileID: 913119582}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &703747744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.16470265
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.54574335
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.4027388
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322145300182557048, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723790538067944676, guid: 7a55cb65c216b494da8d1f04e772b0be,
+        type: 3}
+      propertyPath: m_Name
+      value: InputManager (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a55cb65c216b494da8d1f04e772b0be, type: 3}
 --- !u!1001 &712252126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6050,6 +6152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &736395279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6117,6 +6220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &740994504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6293,6 +6397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &751022683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6776,6 +6881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &784165433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6797,66 +6903,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25, y: 1.2, z: 0.25}
   m_Center: {x: -0.75, y: 0, z: 0}
---- !u!1 &791172552
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 791172555}
-  - component: {fileID: 791172554}
-  - component: {fileID: 791172553}
-  m_Layer: 0
-  m_Name: InputManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &791172553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791172552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc59cbea446aa241b2077f100ba3fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _minimumDistance: 0.5
-  _maximumTime: 1
-  _directionThreshold: 0.5
---- !u!114 &791172554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791172552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 939db53d0f348e04a83261bb3374e033, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &791172555
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791172552}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16470265, y: 0.54574335, z: 2.4027388}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &793702332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6903,6 +6949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &793702335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6970,6 +7017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &822473574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7444,6 +7492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &912067481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7601,7 +7650,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 702769677}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -7703,6 +7752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &914555694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7860,7 +7910,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1717620890}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -7962,6 +8012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &924168628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8330,6 +8381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &976207427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8397,6 +8449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &977292050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8464,6 +8517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &988813118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8531,6 +8585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &997872279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8598,6 +8653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1002201201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8665,6 +8721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1006622163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8763,6 +8820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1025033197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8963,6 +9021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1034314163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9030,6 +9089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &1037294709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9097,6 +9157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1045839171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9231,6 +9292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1065380096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9298,6 +9360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1067715909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9365,6 +9428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &1088604898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9474,7 +9538,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1660656377}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -9582,6 +9646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1122275611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9630,14 +9695,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130947265}
-  m_LocalRotation: {x: 0.30108985, y: -0.75311136, z: 0.21665874, w: 0.54334813}
-  m_LocalPosition: {x: 76.2, y: 24.9, z: 62.7}
+  m_LocalRotation: {x: 0.28825393, y: -0.6362523, z: 0.29531193, w: 0.65183103}
+  m_LocalPosition: {x: 76.2, y: 24.9, z: 51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 244446140}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 40.808, y: -114.648, z: -16.744}
+  m_LocalEulerAnglesHint: {x: 48.727, y: -87.899, z: 1.579}
 --- !u!114 &1130947267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9977,6 +10042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1176097702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10202,7 +10268,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1469905811}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -10371,6 +10437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &1199465474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10444,7 +10511,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 628103623}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -10527,7 +10594,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 347937207}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -10725,7 +10792,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1219972714}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -10827,6 +10894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1254548526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10925,6 +10993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1279835062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11082,7 +11151,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1990434696}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -11184,6 +11253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1336582968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11251,6 +11321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &1343337389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11318,6 +11389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1353313360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11385,6 +11457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1386036686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11452,6 +11525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1387258084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11519,6 +11593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1388919313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11586,6 +11661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1398542675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11768,6 +11844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1435134766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11835,6 +11912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1461861469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11968,6 +12046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1509184274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12010,7 +12089,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 60915096}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -12208,7 +12287,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1912839905}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -12310,6 +12389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1563145327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12642,6 +12722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1635247485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12799,7 +12880,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 461783123}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -12901,6 +12982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1639953805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13003,6 +13085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1647948301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13210,6 +13293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &1679928029
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13277,6 +13361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1691380870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13543,6 +13628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1704698468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13863,6 +13949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &1743656410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13930,6 +14017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1745852636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13997,6 +14085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1760470565
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14143,6 +14232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1770334994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14241,6 +14331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1791625413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14339,6 +14430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1799676140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14406,6 +14498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1812400197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14619,6 +14712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1837772595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14686,6 +14780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1841140392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14784,6 +14879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &1843102771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14851,6 +14947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1845327478
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15071,6 +15168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1875740325
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15138,6 +15236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &1891465716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15205,6 +15304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1891571377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15382,6 +15482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &1921418746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15449,6 +15550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1934483884
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15516,6 +15618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &1973186000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15583,6 +15686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &1977969162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15951,6 +16055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!65 &2006595999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16018,6 +16123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &2008255579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16147,6 +16253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 3
+  _disableSelf: 1
 --- !u!65 &2061259808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16304,7 +16411,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 64078238}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -16406,6 +16513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!65 &2072536981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16448,7 +16556,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 890058933}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -16725,7 +16833,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 281137693}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -16827,6 +16935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!65 &2130188449
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16984,7 +17093,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1428005691}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
