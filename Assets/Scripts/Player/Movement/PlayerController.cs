@@ -9,15 +9,18 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController Instance;
 
-    [Header("Properties")] [SerializeField]
+    [Header("Properties")]
+    [SerializeField]
     private bool _canMove;
+    private bool _atEnd = false;
 
     [SerializeField] private bool _isMoving;
 
     [Header("Tile")] public Tile InitialTile;
     private Tile _currentTile;
 
-    [Header("Movement Delay")] [SerializeField]
+    [Header("Movement Delay")]
+    [SerializeField]
     private float _groundMoveDelay;
 
     [SerializeField] private float _wallMoveDelay;
@@ -46,6 +49,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (_atEnd == true) { return; }
+
         _canMove = !_isMoving;
 
         if (_isMoving == false)
@@ -56,6 +61,8 @@ public class PlayerController : MonoBehaviour
 
     public void SwipeDirection(Vector2 direction, float _directionThreshold)
     {
+        Debug.Log($"{direction} direction");
+
         switch (_currentTile.Type)
         {
             case TileType.Ground:
@@ -74,21 +81,25 @@ public class PlayerController : MonoBehaviour
     {
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
+            Debug.Log($"up");
             return _currentTile.ForwardTile;
         }
 
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
+            Debug.Log($"down");
             return _currentTile.BackwardTile;
         }
 
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
+            Debug.Log($"left");
             return _currentTile.LeftTile;
         }
 
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
+            Debug.Log($"right");
             return _currentTile.RightTile;
         }
 
@@ -97,23 +108,28 @@ public class PlayerController : MonoBehaviour
 
     private Tile SwipeFromWall(Vector2 direction, float _directionThreshold)
     {
+        Debug.Log($"{Vector2.Dot(Vector2.right, direction)} up test");
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
+            Debug.Log($"up");
             return _currentTile.UpTile;
         }
 
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
+            Debug.Log($"down");
             return _currentTile.DownTile != null ? _currentTile.DownTile : _currentTile.BackwardTile;
         }
 
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
+            Debug.Log($"left");
             return _currentTile.LeftTile;
         }
 
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
+            Debug.Log($"right");
             return _currentTile.RightTile;
         }
 
@@ -122,23 +138,28 @@ public class PlayerController : MonoBehaviour
 
     private Tile SwipeFromWallGround(Vector2 direction, float _directionThreshold)
     {
+        Debug.Log($"{Vector2.Dot(Vector2.right, direction)} up test");
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
+            Debug.Log($"up");
             return _currentTile.ForwardTile;
         }
 
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
+            Debug.Log($"down");
             return _currentTile.BackwardTile;
         }
 
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
+            Debug.Log($"left");
             return _currentTile.LeftTile;
         }
 
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
+            Debug.Log($"right");
             return _currentTile.DownTile;
         }
 

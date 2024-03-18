@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviourSingleton<InputManager>
     #region Events
     public delegate void StartTouch(Vector2 position, float time);
     public event StartTouch OnStartTouch;
-    
+
     public delegate void EndTouch(Vector2 position, float time);
     public event StartTouch OnEndTouch;
     #endregion
@@ -42,15 +42,17 @@ public class InputManager : MonoBehaviourSingleton<InputManager>
     {
         if (OnStartTouch != null)
         {
-            OnStartTouch(Utils.ScreenToWorld(_mainCamera, _playerControls.Touch.PrimaryPosition.ReadValue<Vector2>()), (float)context.startTime);
+            //OnStartTouch(Utils.ScreenToWorld(_mainCamera, _playerControls.Touch.PrimaryPosition.ReadValue<Vector2>()), (float)context.startTime);
+            OnStartTouch(_playerControls.Touch.PrimaryPosition.ReadValue<Vector2>(), (float)context.startTime);
         }
     }
-    
+
     private void EndTouchPrimary(InputAction.CallbackContext context)
     {
         if (OnEndTouch != null)
         {
-            OnEndTouch(Utils.ScreenToWorld(_mainCamera, _playerControls.Touch.PrimaryPosition.ReadValue<Vector2>()), (float)context.time);
+            //OnEndTouch(Utils.ScreenToWorld(_mainCamera, _playerControls.Touch.PrimaryPosition.ReadValue<Vector2>()), (float)context.time);
+            OnEndTouch(_playerControls.Touch.PrimaryPosition.ReadValue<Vector2>(), (float)context.time);
         }
     }
 
