@@ -3558,6 +3558,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 314216811}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &314216814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 891381934813869501, guid: 44bb5a4a0bb37314f99df81d4584d48b,
+    type: 3}
+  m_PrefabInstance: {fileID: 314216811}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdf0f968b8bc014e99e327019dbc504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &321560823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12418,6 +12430,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Script
       objectReference: {fileID: 0}
+    - target: {fileID: 8600637679658020395, guid: cd5170f492081ab4cbc983ba5f08fb29,
+        type: 3}
+      propertyPath: _levelIndex
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793553423133112219, guid: cd5170f492081ab4cbc983ba5f08fb29,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 314216814}
     - target: {fileID: 8793553423133112219, guid: cd5170f492081ab4cbc983ba5f08fb29,
         type: 3}
       propertyPath: BulletObject
