@@ -13854,6 +13854,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Script
       objectReference: {fileID: 0}
+    - target: {fileID: 8600637679658020395, guid: cd5170f492081ab4cbc983ba5f08fb29,
+        type: 3}
+      propertyPath: _levelIndex
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8793553423133112219, guid: cd5170f492081ab4cbc983ba5f08fb29,
         type: 3}
       propertyPath: Player

@@ -5,21 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SceneTestIncrustationEnemy.unity
-    guid: 5566b350325b78c4099ca7cb3cbf14bb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu/MenuSelection.unity
     guid: 499b0bbb5b1ff424b87c9aaafb1fd976
-  - enabled: 0
-    path: Assets/Scenes/Menu/Level01.unity
-    guid: 67a354ebfcfa0ed49b7d6788508dc875
-  - enabled: 0
-    path: Assets/Scenes/Menu/Level02.unity
-    guid: a8691286b6e990043bb1c9ad07674a06
-  - enabled: 0
-    path: Assets/Scenes/Menu/Level03.unity
-    guid: 4d46f4df04fbfcc4796f72f9b4808a8b
   - enabled: 1
     path: Assets/Scenes/LD/LD_1.unity
     guid: 9b4a556ccd34e2647953cec9fa05cd48

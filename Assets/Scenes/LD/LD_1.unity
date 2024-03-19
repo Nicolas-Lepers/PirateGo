@@ -1930,7 +1930,8 @@ PrefabInstance:
       value: CanvasGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7044478546592370063, guid: 48808171fd00429458b4f460fa4a7161, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48808171fd00429458b4f460fa4a7161, type: 3}
@@ -10527,6 +10528,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Script
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600637679658020395, guid: cd5170f492081ab4cbc983ba5f08fb29,
+        type: 3}
+      propertyPath: _levelIndex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8793553423133112219, guid: cd5170f492081ab4cbc983ba5f08fb29,
         type: 3}
