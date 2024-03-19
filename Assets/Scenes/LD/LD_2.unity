@@ -31627,6 +31627,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 101438002}
     m_Modifications:
+    - target: {fileID: 4363715178944464227, guid: fe8e7c3d8e6584f47829ce5c3032228c,
+        type: 3}
+      propertyPath: Direction
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4797572481748759145, guid: fe8e7c3d8e6584f47829ce5c3032228c,
         type: 3}
       propertyPath: m_Enabled
@@ -31636,6 +31641,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TileWallGround (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445982700365784822, guid: fe8e7c3d8e6584f47829ce5c3032228c,
+        type: 3}
+      propertyPath: Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447415338509192755, guid: fe8e7c3d8e6584f47829ce5c3032228c,
+        type: 3}
+      propertyPath: Direction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6102925680323279781, guid: fe8e7c3d8e6584f47829ce5c3032228c,
         type: 3}
@@ -38299,7 +38314,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  End: 0
+  End: 1
   Origin: {fileID: 1537813773}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
