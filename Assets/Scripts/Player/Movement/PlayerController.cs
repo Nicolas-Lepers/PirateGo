@@ -112,6 +112,9 @@ public class PlayerController : MonoBehaviour
         return null;
     }
 
+
+    private bool _moveWallVertical = false;
+    private bool _moveWallLeft = false;
     private Tile SwipeFromWall(Vector2 direction, float _directionThreshold)
     {
 
@@ -133,6 +136,7 @@ public class PlayerController : MonoBehaviour
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
             Debug.Log($"left");
+            _moveWallLeft = true;
             _moveWallVertical = false;
             return _currentTile.LeftTile;
         }
@@ -140,13 +144,14 @@ public class PlayerController : MonoBehaviour
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
             Debug.Log($"right");
+            _moveWallLeft = false;
             _moveWallVertical = false;
             return _currentTile.RightTile;
         }
 
         return null;
     }
-    private bool _moveWallVertical = false;
+
     private Tile SwipeFromWallGround(Vector2 direction, float _directionThreshold)
     {
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
@@ -191,17 +196,18 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(gameObject.AddComponent<Timer>().Execute(1.5f, GameManager.Instance.SceneManagerRef.LoadNextScene));
         }
 
-        Animate(newTile);
+        Animation(newTile);
+
+        StartCoroutine(RotatePlayer(newTile));
 
         _currentTile = newTile;
 
 
-        RotatePlayer(newTile);
 
         StartCoroutine(MoveToTile(newTile));
     }
 
-    private void Animate(Tile newTile)
+    private void Animation(Tile newTile)
     {
         switch (newTile.Type)
         {
@@ -212,7 +218,12 @@ public class PlayerController : MonoBehaviour
                         AnimatorRef.SetBool("idle_grimp", false);
                         AnimatorRef.SetBool("idle", true);
                         AnimatorRef.SetTrigger("walk");
-                        Debug.Log("transi wall ground");
+                    }
+                    else if (_currentTile.Type == TileType.WallGround)
+                    {
+                        AnimatorRef.SetTrigger("walk");
+                        AnimatorRef.SetBool("idle_grimp", false);
+                        AnimatorRef.SetBool("idle", true);
                     }
                     else
                     {
@@ -226,7 +237,13 @@ public class PlayerController : MonoBehaviour
                     if (_currentTile.Type == TileType.Ground)
                     {
                         AnimatorRef.SetTrigger("walk");
-                        Debug.Log("transi ground wall");
+                        AnimatorRef.SetBool("idle_grimp", true);
+                        AnimatorRef.SetBool("idle", false);
+                    }
+                    else if (_currentTile.Type == TileType.WallGround)
+                    {
+                        AnimatorRef.SetTrigger("walk");
+                        Debug.Log("ici");
                         AnimatorRef.SetBool("idle_grimp", true);
                         AnimatorRef.SetBool("idle", false);
                     }
@@ -238,9 +255,24 @@ public class PlayerController : MonoBehaviour
                         }
                         else
                         {
-                            Debug.Log("side");
-                            //AnimatorRef.SetTrigger("grimp_side");
+                            AnimatorRef.SetTrigger(_moveWallLeft == true ? "grimp_side_left" : "grimp_side_right");
                         }
+                    }
+                }
+                break;
+            case TileType.WallGround:
+                {
+                    if (_currentTile.Type == TileType.Wall)
+                    {
+                        AnimatorRef.SetTrigger("grimp");
+                        AnimatorRef.SetBool("idle_grimp", false);
+                        AnimatorRef.SetBool("idle", true);
+                    }
+                    else
+                    {
+                        AnimatorRef.SetTrigger("walk");
+                        AnimatorRef.SetBool("idle_grimp", false);
+                        AnimatorRef.SetBool("idle", true);
                     }
                 }
                 break;
@@ -276,16 +308,22 @@ public class PlayerController : MonoBehaviour
 
     #region Rotate
 
-    private void RotatePlayer(Tile newTile)
+    private IEnumerator RotatePlayer(Tile newTile)
     {
         if (newTile.Type == TileType.Ground || newTile.Type == TileType.WallGround)
         {
             transform.LookAt(new Vector3(newTile.Origin.transform.position.x, transform.position.y, newTile.Origin.transform.position.z));
         }
-        else if (newTile.Type == TileType.Wall)
+        else if (_currentTile.Type == TileType.WallGround && newTile.Type == TileType.Wall)
+        {
+            yield return new WaitForSeconds(0.5f);
+            transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, transform.position.z));
+        }
+        else if (_currentTile.Type == TileType.Ground && newTile.Type == TileType.Wall)
         {
             transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, transform.position.z));
         }
+
     }
 
     #endregion
