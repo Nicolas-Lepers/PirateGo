@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (_atEnd == true) { return; }
+        if (_atEnd == true || _isDead == true) { return; }
 
         _canMove = !_isMoving;
 
@@ -327,8 +327,10 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-    public void SetCanMove(bool value)
+   
+    private bool _isDead = false;
+    public void SetDead(bool value)
     {
-        _canMove = value;
+        _isDead = value;
     }
 }

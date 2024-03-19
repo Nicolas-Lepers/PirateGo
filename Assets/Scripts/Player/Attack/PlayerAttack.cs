@@ -5,25 +5,35 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private MeleeArea _area;
+
+    [SerializeField] float DelayAttackMeleeHit = 0.5f;
+    [SerializeField] float DelayAttackRangeShoot = 0.5f;
     private void Start()
     {
         _area = GetComponentInChildren<MeleeArea>();
     }
     public void OnAttackMelee()
     {
-        GameManager game = GameManager.Instance;
+        GameManager.Instance.Player.AnimatorRef.SetTrigger("attack_sword");
+        GameManager.Instance.ManagerUIRef.WeaponMelee.interactable = false;
+
+        StartCoroutine(this.gameObject.AddComponent<Timer>().Execute(DelayAttackMeleeHit, AttackMelee));
+    }
+    private void AttackMelee()
+    {
         _area.Target.Hit();
         _area.CanInteract(false);
-        game.ManagerUIRef.WeaponMelee.interactable = false;
-        game.Player.AnimatorRef.SetTrigger("attack_sword");
     }
-
 
     public void OnAttackRange()
     {
-        GameManager game = GameManager.Instance;
-        game.BulletObject.Init(transform.position, game.PlayerTempRef.transform.forward);
-        game.ManagerUIRef.WeaponRange.interactable = false;
-        game.Player.AnimatorRef.SetTrigger("attack_gun");
+        GameManager.Instance.Player.AnimatorRef.SetTrigger("attack_gun");
+        GameManager.Instance.ManagerUIRef.WeaponRange.interactable = false;
+
+        StartCoroutine(this.gameObject.AddComponent<Timer>().Execute(DelayAttackRangeShoot, AttackRange));
+    }
+    private void AttackRange()
+    {
+        GameManager.Instance.BulletObject.Init(transform.position, GameManager.Instance.PlayerTempRef.transform.forward);
     }
 }
