@@ -193,7 +193,8 @@ public class PlayerController : MonoBehaviour
         if (newTile.End == true)
         {
             _atEnd = newTile.End;
-            StartCoroutine(gameObject.AddComponent<Timer>().Execute(1.5f, GameManager.Instance.SceneManagerRef.LoadNextScene));
+            GameManager.Instance.ManagerUIRef.EndStage();
+            StartCoroutine(gameObject.AddComponent<Timer>().Execute(2, GameManager.Instance.SceneManagerRef.SceneSelectStage));
         }
 
         Animation(newTile);
