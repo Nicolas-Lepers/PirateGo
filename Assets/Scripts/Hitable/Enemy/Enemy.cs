@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour, IHitable
     private Vector3 _offsetPosition;
     public bool DoAction = true;
 
+    public Animator AnimatorRef;
+
     [SerializeField, Tooltip("For the time of move animation")] float _moveTime;
     private void Start()
     {
@@ -49,14 +51,18 @@ public class Enemy : MonoBehaviour, IHitable
                 break;
             case Behaviour.Moving:
                 {
-                    StartCoroutine(MoveAndRotate(_moveTime));
+                    CoroutineMove = StartCoroutine(MoveAndRotate(_moveTime));
                 }
                 break;
         }
     }
-    private IEnumerator MoveAndRotate(float time)
+    public Coroutine CoroutineMove;
+    public IEnumerator MoveAndRotate(float time)
     {
         _path[_currentPath].gameObject.GetComponent<Tile>().SetHasEnemy(false);
+
+        AnimatorRef.SetTrigger("walk");
+
 
         _currentPath = (_currentPath + 1) % _path.Count;
 
@@ -79,6 +85,7 @@ public class Enemy : MonoBehaviour, IHitable
     {
         Timer timer = this.gameObject.AddComponent<Timer>();
         StartCoroutine(timer.Execute(1, Disable));
+        AnimatorRef.SetTrigger("death");
         Debug.Log("hit enemy");
     }
     private void Disable()

@@ -12,7 +12,12 @@ public class FOVEnemy : MonoBehaviour
         PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
         {
+            StopCoroutine(_enemy.CoroutineMove);
             _enemy.DoAction = false;
+            _enemy.AnimatorRef.SetTrigger("attack");
+
+
+            GameManager.Instance.Player.SetCanMove(false);
             GameManager.Instance.Player.AnimatorRef.SetTrigger("death");
             Debug.Log("player dead");
             //GameManager.Instance.SceneManagerRef.ResetScene();
