@@ -289,4 +289,8 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+    public void SetCanMove(bool value)
+    {
+        _canMove = value;
+    }
 }
