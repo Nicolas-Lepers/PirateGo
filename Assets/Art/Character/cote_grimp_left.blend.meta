@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8f4b0a1579c70e441ad5a07ef5334993
+guid: cfcae5b3ff7d4094689baf274d9e7fb9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: grimp
+      name: grimp_side_left
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 1
-      lastFrame: 14
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
