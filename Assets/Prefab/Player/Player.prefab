@@ -55,6 +55,7 @@ MonoBehaviour:
   _groundMoveDelay: 0.5
   _wallMoveDelay: 0.5
   _wallGroundMoveDelay: 0.5
+  AnimatorRef: {fileID: 7226594443435419455}
 --- !u!54 &4745835383123375970
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using Movement;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -85,30 +86,26 @@ public class PlayerController : MonoBehaviour
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
             Debug.Log($"up");
-          
-            AnimatorRef.SetTrigger("walk");
+
 
             return _currentTile.ForwardTile;
         }
 
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
-            AnimatorRef.SetTrigger("walk");
-            Debug.Log($"down"); 
+            Debug.Log($"down");
             return _currentTile.BackwardTile;
         }
 
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
-            AnimatorRef.SetTrigger("walk");
-            Debug.Log($"left"); 
+            Debug.Log($"left");
             return _currentTile.LeftTile;
         }
 
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
-            AnimatorRef.SetTrigger("walk");
-            Debug.Log($"right"); 
+            Debug.Log($"right");
             return _currentTile.RightTile;
         }
 
@@ -118,82 +115,62 @@ public class PlayerController : MonoBehaviour
     private Tile SwipeFromWall(Vector2 direction, float _directionThreshold)
     {
 
-        Debug.Log($"{Vector2.Dot(Vector2.right, direction)} up test");
         if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
         {
-            AnimatorRef.SetBool("idle", !false);
-            AnimatorRef.SetBool("idle_grimp", !true);
-            AnimatorRef.SetTrigger("grimp");
-
             Debug.Log($"up");
+            _moveWallVertical = true;
             return _currentTile.UpTile;
         }
 
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
-            AnimatorRef.SetTrigger("grimp");
-            AnimatorRef.SetBool("idle_grimp", !true);
-            AnimatorRef.SetBool("idle", !false);
-
             Debug.Log($"down");
+            _moveWallVertical = true;
             return _currentTile.DownTile != null ? _currentTile.DownTile : _currentTile.BackwardTile;
         }
 
 
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
         {
-            AnimatorRef.SetTrigger("grimp");
-            AnimatorRef.SetBool("idle_grimp", !true);
-            AnimatorRef.SetBool("idle", !false);
+            Debug.Log($"left");
+            _moveWallVertical = false;
+            return _currentTile.LeftTile;
+        }
 
+        if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
+        {
+            Debug.Log($"right");
+            _moveWallVertical = false;
+            return _currentTile.RightTile;
+        }
+
+        return null;
+    }
+    private bool _moveWallVertical = false;
+    private Tile SwipeFromWallGround(Vector2 direction, float _directionThreshold)
+    {
+        if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
+        {
+            Debug.Log($"up");
+            return _currentTile.ForwardTile;
+        }
+
+        if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
+        {
+            Debug.Log($"down");
+            return _currentTile.BackwardTile;
+        }
+
+        if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
+        {
             Debug.Log($"left");
             return _currentTile.LeftTile;
         }
 
         if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
         {
-            AnimatorRef.SetTrigger("grimp");
-            AnimatorRef.SetBool("idle_grimp", !true);
-            AnimatorRef.SetBool("idle", !false);
-
             Debug.Log($"right");
-            return _currentTile.RightTile;
-        }
 
-        return null;
-    }
-
-    private Tile SwipeFromWallGround(Vector2 direction, float _directionThreshold)
-    {
-        if (Vector2.Dot(Vector2.up, direction) > _directionThreshold)
-        {
-            AnimatorRef.SetTrigger("walk");
-            Debug.Log($"up"); AnimatorRef.SetBool("idle_grimp", !true);
-            AnimatorRef.SetBool("idle", !false);
-            return _currentTile.ForwardTile;
-        }
-
-        if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
-        {
-            Debug.Log($"down"); AnimatorRef.SetBool("idle_grimp", !true);
-            AnimatorRef.SetBool("idle", !false);
-            AnimatorRef.SetTrigger("walk");
-            return _currentTile.BackwardTile;
-        }
-
-        if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
-        {
-            Debug.Log($"left"); AnimatorRef.SetBool("idle_grimp", !true);
-            AnimatorRef.SetBool("idle", !false);
-            AnimatorRef.SetTrigger("walk");
-            return _currentTile.LeftTile;
-        }
-
-        if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
-        {
-            AnimatorRef.SetTrigger("walk");
-            Debug.Log($"right"); AnimatorRef.SetBool("idle_grimp", !true);
-            AnimatorRef.SetBool("idle", !false);
             return _currentTile.DownTile;
         }
 
@@ -214,14 +191,60 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(gameObject.AddComponent<Timer>().Execute(1.5f, GameManager.Instance.SceneManagerRef.LoadNextScene));
         }
 
+        Animate(newTile);
 
         _currentTile = newTile;
-
 
 
         RotatePlayer(newTile);
 
         StartCoroutine(MoveToTile(newTile));
+    }
+
+    private void Animate(Tile newTile)
+    {
+        switch (newTile.Type)
+        {
+            case TileType.Ground:
+                {
+                    if (_currentTile.Type == TileType.Wall)
+                    {
+                        AnimatorRef.SetBool("idle_grimp", false);
+                        AnimatorRef.SetBool("idle", true);
+                        AnimatorRef.SetTrigger("walk");
+                        Debug.Log("transi wall ground");
+                    }
+                    else
+                    {
+                        AnimatorRef.SetTrigger("walk");
+                    }
+
+                }
+                break;
+            case TileType.Wall:
+                {
+                    if (_currentTile.Type == TileType.Ground)
+                    {
+                        AnimatorRef.SetTrigger("walk");
+                        Debug.Log("transi ground wall");
+                        AnimatorRef.SetBool("idle_grimp", true);
+                        AnimatorRef.SetBool("idle", false);
+                    }
+                    else
+                    {
+                        if (_moveWallVertical == true)
+                        {
+                            AnimatorRef.SetTrigger("grimp");
+                        }
+                        else
+                        {
+                            Debug.Log("side");
+                            //AnimatorRef.SetTrigger("grimp_side");
+                        }
+                    }
+                }
+                break;
+        }
     }
 
     private IEnumerator MoveToTile(Tile newTile)
@@ -257,13 +280,11 @@ public class PlayerController : MonoBehaviour
     {
         if (newTile.Type == TileType.Ground || newTile.Type == TileType.WallGround)
         {
-            transform.LookAt(new Vector3(newTile.Origin.transform.position.x, transform.position.y,
-                newTile.Origin.transform.position.z));
+            transform.LookAt(new Vector3(newTile.Origin.transform.position.x, transform.position.y, newTile.Origin.transform.position.z));
         }
         else if (newTile.Type == TileType.Wall)
         {
-            transform.LookAt(new Vector3(newTile.transform.position.x, newTile.transform.position.y,
-                newTile.transform.position.z));
+            transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, transform.position.z));
         }
     }
 
