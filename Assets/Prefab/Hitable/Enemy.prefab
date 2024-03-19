@@ -74,6 +74,7 @@ MonoBehaviour:
   _rotateLeft: 0
   _path: []
   DoAction: 1
+  AnimatorRef: {fileID: 8209584785034062432}
   _moveTime: 0.5
 --- !u!1 &8169985008696094480
 GameObject:
