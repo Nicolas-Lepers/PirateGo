@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &33285336
 BoxCollider:
@@ -310,10 +310,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289157259892113365, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2910219053961791031, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542726011753622805, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7853591861349953104, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
@@ -639,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &82013010
 BoxCollider:
@@ -2705,7 +2715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &225598167
 BoxCollider:
@@ -3178,7 +3188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &253071312
 BoxCollider:
@@ -3246,7 +3256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &253608602
 BoxCollider:
@@ -4329,7 +4339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &422406540
 BoxCollider:
@@ -6219,7 +6229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &586323661
 BoxCollider:
@@ -6910,7 +6920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &647936665
 BoxCollider:
@@ -7064,10 +7074,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289157259892113365, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2910219053961791031, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463298596416583982, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542726011753622805, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7853591861349953104, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
@@ -7249,7 +7274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &696973390
 BoxCollider:
@@ -7617,7 +7642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &736395279
 BoxCollider:
@@ -7685,7 +7710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &740994504
 BoxCollider:
@@ -7949,7 +7974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &751022683
 BoxCollider:
@@ -8449,7 +8474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &784165433
 BoxCollider:
@@ -8517,7 +8542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &793702335
 BoxCollider:
@@ -8616,7 +8641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &822473574
 BoxCollider:
@@ -8822,10 +8847,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289157259892113365, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2910219053961791031, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463298596416583982, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542726011753622805, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7853591861349953104, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
@@ -9107,10 +9147,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289157259892113365, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2910219053961791031, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542726011753622805, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8194603333304976315, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
@@ -9566,7 +9616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &914555694
 BoxCollider:
@@ -10287,7 +10337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &976207427
 BoxCollider:
@@ -10355,7 +10405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &977292050
 BoxCollider:
@@ -10559,7 +10609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1002201201
 BoxCollider:
@@ -10726,7 +10776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1025033197
 BoxCollider:
@@ -10775,7 +10825,7 @@ PrefabInstance:
     - target: {fileID: 4618394795560378838, guid: 2291705776776214fbcd628ad9a56594,
         type: 3}
       propertyPath: _path.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4618394795560378838, guid: 2291705776776214fbcd628ad9a56594,
         type: 3}
@@ -10927,7 +10977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1034314163
 BoxCollider:
@@ -11277,7 +11327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1065380096
 BoxCollider:
@@ -11345,7 +11395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1067715909
 BoxCollider:
@@ -11765,7 +11815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1122275611
 BoxCollider:
@@ -12244,7 +12294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1176097702
 BoxCollider:
@@ -13270,7 +13320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1254548526
 BoxCollider:
@@ -13572,7 +13622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1353313360
 BoxCollider:
@@ -13640,7 +13690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1386036686
 BoxCollider:
@@ -13708,7 +13758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1387258084
 BoxCollider:
@@ -13776,7 +13826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1388919313
 BoxCollider:
@@ -13844,7 +13894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1398542675
 BoxCollider:
@@ -14099,7 +14149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1435134766
 BoxCollider:
@@ -14390,7 +14440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1509184274
 BoxCollider:
@@ -15844,7 +15894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1647948301
 BoxCollider:
@@ -16270,7 +16320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1691380870
 BoxCollider:
@@ -16552,7 +16602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1704698468
 BoxCollider:
@@ -16886,10 +16936,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289157259892113365, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2910219053961791031, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542726011753622805, guid: fded1d858fc514645ba3ac21f2f47449,
+        type: 3}
+      propertyPath: Direction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7853591861349953104, guid: fded1d858fc514645ba3ac21f2f47449,
         type: 3}
@@ -17108,7 +17168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1745852636
 BoxCollider:
@@ -17243,7 +17303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1760470565
 BoxCollider:
@@ -17431,7 +17491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1791625413
 BoxCollider:
@@ -17598,7 +17658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1812400197
 BoxCollider:
@@ -17812,7 +17872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1837772595
 BoxCollider:
@@ -17880,7 +17940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1841140392
 BoxCollider:
@@ -18096,7 +18156,7 @@ PrefabInstance:
     - target: {fileID: 4618394795560378838, guid: 2291705776776214fbcd628ad9a56594,
         type: 3}
       propertyPath: _path.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4618394795560378838, guid: 2291705776776214fbcd628ad9a56594,
         type: 3}
@@ -18486,7 +18546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1891571377
 BoxCollider:
@@ -18707,7 +18767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &1921418746
 BoxCollider:
@@ -19073,7 +19133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &1973186000
 BoxCollider:
@@ -19479,7 +19539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 0
+  Direction: 4
   _disableSelf: 1
 --- !u!65 &2006595999
 BoxCollider:
@@ -19547,7 +19607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &2008255579
 BoxCollider:
@@ -19884,7 +19944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181878426d9d324098c1f399729de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
+  Direction: 5
   _disableSelf: 1
 --- !u!65 &2061259808
 BoxCollider:
