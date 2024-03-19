@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
         if (Vector2.Dot(Vector2.down, direction) > _directionThreshold)
         {
             Debug.Log($"down");
-            return _currentTile.BackwardTile;
+            return _currentTile.DownTile;
         }
 
         if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log($"right");
 
-            return _currentTile.DownTile;
+            return _currentTile.RightTile;
         }
 
         return null;
@@ -244,7 +244,6 @@ public class PlayerController : MonoBehaviour
                     else if (_currentTile.Type == TileType.WallGround)
                     {
                         AnimatorRef.SetTrigger("walk");
-                        Debug.Log("ici");
                         AnimatorRef.SetBool("idle_grimp", true);
                         AnimatorRef.SetBool("idle", false);
                     }
@@ -311,24 +310,29 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator RotatePlayer(Tile newTile)
     {
-        if (newTile.Type == TileType.Ground || newTile.Type == TileType.WallGround)
+        if (newTile.Type == TileType.Ground)
+        {
+            transform.LookAt(new Vector3(newTile.Origin.transform.position.x, transform.position.y, newTile.Origin.transform.position.z));
+        }
+        else if (newTile.Type == TileType.WallGround)
         {
             transform.LookAt(new Vector3(newTile.Origin.transform.position.x, transform.position.y, newTile.Origin.transform.position.z));
         }
         else if (_currentTile.Type == TileType.WallGround && newTile.Type == TileType.Wall)
         {
+            transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, newTile.transform.position.z));
             yield return new WaitForSeconds(0.5f);
-            transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, transform.position.z));
+            transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, newTile.transform.position.z));
         }
         else if (_currentTile.Type == TileType.Ground && newTile.Type == TileType.Wall)
         {
-            transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, transform.position.z));
+            transform.LookAt(new Vector3(newTile.transform.position.x, transform.position.y, newTile.transform.position.z));
         }
 
     }
 
     #endregion
-   
+
     private bool _isDead = false;
     public void SetDead(bool value)
     {
