@@ -20,7 +20,7 @@ public class CheckerTile : MonoBehaviour
     private void Start()
     {
         _tileParent = GetComponentInParent<Tile>();
-        if(_disableSelf == true)
+        if (_disableSelf == true)
         {
             StartCoroutine(gameObject.AddComponent<Timer>().Execute(1, DisableSelf));
         }
@@ -31,10 +31,10 @@ public class CheckerTile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Tile>())
+        Tile currentTile = other.GetComponent<Tile>();
+        if (currentTile != null)
         {
-            Tile currentTile = other.GetComponent<Tile>();
-            
+
             switch (Direction)
             {
                 case CheckerDirection.Up:
