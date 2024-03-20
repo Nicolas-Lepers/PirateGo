@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _wallGroundMoveDelay;
     private float _moveDelay;
     public Animator AnimatorRef;
+
+    [SerializeField] AudioClip _move;
     #endregion
 
     private void Awake()
@@ -297,6 +299,7 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.DOMove(newTile.Origin.position, _moveDelay);
+        AudioManager.Instance.PlaySFXSound(_move);
         yield return new WaitForSeconds(_moveDelay);
 
         GameManager.Instance.MoveGame();

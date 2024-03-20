@@ -243,6 +243,7 @@ MonoBehaviour:
   parameter: {fileID: 768950306}
   controls: {fileID: 404186453}
   credits: {fileID: 1144675013}
+  _musicMenu: {fileID: 8300000, guid: d9c6156be3b3d974db8e97ee34940c57, type: 3}
 --- !u!4 &120967619
 Transform:
   m_ObjectHideFlags: 0

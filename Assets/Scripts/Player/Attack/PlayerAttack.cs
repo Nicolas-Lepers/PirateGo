@@ -8,6 +8,9 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] float DelayAttackMeleeHit = 0.5f;
     [SerializeField] float DelayAttackRangeShoot = 0.5f;
+
+    [SerializeField] AudioClip _pistol;
+    [SerializeField] AudioClip _sword;
     private void Start()
     {
         _area = GetComponentInChildren<MeleeArea>();
@@ -21,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void AttackMelee()
     {
+        AudioManager.Instance.PlaySFXSound(_sword);
         _area.Target.Hit();
         _area.CanInteract(false);
     }
@@ -34,6 +38,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void AttackRange()
     {
+        AudioManager.Instance.PlaySFXSound(_pistol);
         GameManager.Instance.BulletObject.Init(transform.position, GameManager.Instance.PlayerTempRef.transform.forward);
     }
 }

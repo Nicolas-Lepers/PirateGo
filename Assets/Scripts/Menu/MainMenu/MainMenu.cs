@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour
     public GameObject controls;
     public GameObject credits;
 
+    [SerializeField] AudioClip _musicMenu;
+
     //public List<Interface> buttons;
     private void Update()
     {
@@ -24,7 +26,7 @@ public class MainMenu : MonoBehaviour
             Title.SetActive(true);
         else
             Title.SetActive(false);
-    
+
     }
     private void Awake()
     {
@@ -35,7 +37,7 @@ public class MainMenu : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_menu"));
+        AudioManager.Instance.CoroutineMusic = StartCoroutine(AudioManager.Instance.IEPlayMusicSound(_musicMenu));
 
     }
     public void OnClickPlay()
@@ -53,6 +55,7 @@ public class MainMenu : MonoBehaviour
 
     void FadePlayComplete()
     {
+        StopCoroutine(AudioManager.Instance.CoroutineMusic);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

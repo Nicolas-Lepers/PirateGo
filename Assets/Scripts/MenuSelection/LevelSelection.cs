@@ -12,7 +12,7 @@ public class LevelSelection : MonoBehaviour
     public GameObject NextPath;
     [SerializeField] GameObject[] _stars;
 
-
+    [SerializeField] AudioClip _selectNiveau;
     void Update()
     {
         UpdateLevelStatus();
@@ -29,6 +29,7 @@ public class LevelSelection : MonoBehaviour
 
     public void OnSelectLevel(string levelName)
     {
+        AudioManager.Instance.PlaySFXSound(_selectNiveau);
         SceneManager.LoadScene(levelName);
     }
 

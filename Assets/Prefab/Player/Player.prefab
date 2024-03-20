@@ -56,6 +56,7 @@ MonoBehaviour:
   _wallMoveDelay: 0.5
   _wallGroundMoveDelay: 0.5
   AnimatorRef: {fileID: 7226594443435419455}
+  _move: {fileID: 8300000, guid: d946bfb8edd8df643940d499279c6223, type: 3}
 --- !u!54 &4745835383123375970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -120,6 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DelayAttackMeleeHit: 1
   DelayAttackRangeShoot: 1
+  _pistol: {fileID: 8300000, guid: 9b7fb105a10842344a90ae3f8c2cd6d2, type: 3}
+  _sword: {fileID: 8300000, guid: 9054307f34333514eb2d064579b920cf, type: 3}
 --- !u!1 &4229759043046625905
 GameObject:
   m_ObjectHideFlags: 0

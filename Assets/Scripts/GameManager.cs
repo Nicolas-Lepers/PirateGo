@@ -15,11 +15,15 @@ public class GameManager : MonoBehaviour
     public PlayerAttack PlayerTempRef;
     public PlayerController Player;
 
-    [HideInInspector]public List<Enemy> Enemies = new List<Enemy>();
+    [HideInInspector] public List<Enemy> Enemies = new List<Enemy>();
+
+    [SerializeField] int _targetFPS = 30;
 
 
     private void Awake()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = _targetFPS;
         if (Instance == null)
         {
             Instance = this;
@@ -39,5 +43,13 @@ public class GameManager : MonoBehaviour
             enemy.Move();
         }
         #endregion
+    }
+
+
+
+    void Update()
+    {
+        if (Application.targetFrameRate != _targetFPS)
+            Application.targetFrameRate = _targetFPS;
     }
 }
