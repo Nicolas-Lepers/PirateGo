@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer Mixer;
     public AudioSource AudioSourceMusic;
     public AudioSource AudioSourceSFX;
+    public AudioSource MasterSound;
 
     public AudioClip[] AudioClips;
 
@@ -23,20 +24,23 @@ public class AudioManager : MonoBehaviour
     {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        //SetMusicLevel(MusicSliderValue);
-        //SetSFXLevel(SfxSliderValue);
+        SetMusicLevel(MusicSliderValue);
+        SetSFXLevel(SfxSliderValue);
     }
-
-    //public void SetMusicLevel(float sliderValue)
-    //{
-    //    MusicSliderValue = sliderValue;
-    //    Mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
-    //}
-    //public void SetSFXLevel(float sliderValue)
-    //{
-    //    SfxSliderValue = sliderValue;
-    //    Mixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
-    //}
+    public void SetMasterVolume(Toggle toggle)
+    {
+        Mixer.SetFloat("MasterVolume", Mathf.Log10(toggle.isOn == true ? 0.0001f : 1) * 20);
+    }
+    public void SetMusicLevel(float sliderValue)
+    {
+        MusicSliderValue = sliderValue;
+        Mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+    }
+    public void SetSFXLevel(float sliderValue)
+    {
+        SfxSliderValue = sliderValue;
+        Mixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
+    }
     public void PlayMusicSound(string name)
     {
         AudioClip clip = GetClip(name);
