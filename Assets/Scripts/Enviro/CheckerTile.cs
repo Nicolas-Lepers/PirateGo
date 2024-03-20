@@ -27,7 +27,7 @@ public class CheckerTile : MonoBehaviour
     }
     private void DisableSelf()
     {
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
