@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] AudioClip _pistol;
     [SerializeField] ParticleSystem _shot;
+    [SerializeField] Transform _shotOrigin;
     [SerializeField] AudioClip _sword;
     private void Start()
     {
@@ -39,6 +40,8 @@ public class PlayerAttack : MonoBehaviour
     }
     private void AttackRange()
     {
+        _shot.transform.position = _shotOrigin.transform.position;
+        _shot.transform.rotation = _shotOrigin.transform.rotation;
         _shot.Play();
         AudioManager.Instance.PlaySFXSound(_pistol);
         GameManager.Instance.BulletObject.Init(transform.position, GameManager.Instance.PlayerTempRef.transform.forward);
