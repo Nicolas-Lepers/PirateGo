@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 5
+  _disableSelf: 1
 --- !u!1 &4901835759521824841
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _disableSelf: 1
 --- !u!1 &5202350740542872065
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +290,7 @@ MonoBehaviour:
   Type: 0
   IsAccessible: 1
   HasEnemy: 0
-  HasLever: 0
+  End: 0
   Origin: {fileID: 1196667550202660348}
   ForwardTile: {fileID: 0}
   BackwardTile: {fileID: 0}
@@ -363,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 4
+  _disableSelf: 1
 --- !u!1 &6424056852009396663
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 1
+  _disableSelf: 1
 --- !u!1 &7443923681144667177
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7443923681144667177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
