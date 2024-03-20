@@ -255,7 +255,7 @@ MonoBehaviour:
   parameter: {fileID: 768950306}
   controls: {fileID: 404186453}
   credits: {fileID: 1144675013}
-  _musicMenu: {fileID: 8300000, guid: d9c6156be3b3d974db8e97ee34940c57, type: 3}
+  _musicMenu: {fileID: 8300000, guid: 7615299f0a1448b48aa64b74ee30b225, type: 3}
 --- !u!4 &120967619
 Transform:
   m_ObjectHideFlags: 0
@@ -956,7 +956,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: f75d10804a794db4daa3570071c8b902,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7b08e0661bf3b144d8d83cb89401281a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e28ac251f326df847b82ae3a5c298937, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2853,6 +2853,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7526512143363863902, guid: aace4f24fa3fad146aee0046c7a30d70,
         type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526512143363863902, guid: aace4f24fa3fad146aee0046c7a30d70,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526512143363863902, guid: aace4f24fa3fad146aee0046c7a30d70,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526512143363863902, guid: aace4f24fa3fad146aee0046c7a30d70,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 120967618}
@@ -2910,6 +2925,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816624437441729794, guid: aace4f24fa3fad146aee0046c7a30d70,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816624437441729794, guid: aace4f24fa3fad146aee0046c7a30d70,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816624437441729794, guid: aace4f24fa3fad146aee0046c7a30d70,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7837161519929351091, guid: aace4f24fa3fad146aee0046c7a30d70,
         type: 3}
