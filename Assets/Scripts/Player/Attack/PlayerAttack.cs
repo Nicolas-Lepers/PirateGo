@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float DelayAttackRangeShoot = 0.5f;
 
     [SerializeField] AudioClip _pistol;
+    [SerializeField] ParticleSystem _shot;
     [SerializeField] AudioClip _sword;
     private void Start()
     {
@@ -38,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void AttackRange()
     {
+        _shot.Play();
         AudioManager.Instance.PlaySFXSound(_pistol);
         GameManager.Instance.BulletObject.Init(transform.position, GameManager.Instance.PlayerTempRef.transform.forward);
     }

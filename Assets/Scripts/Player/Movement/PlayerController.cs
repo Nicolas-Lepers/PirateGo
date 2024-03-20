@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public Animator AnimatorRef;
 
     [SerializeField] AudioClip _move;
+    [SerializeField] ParticleSystem _moveParticle;
+
     #endregion
 
     private void Awake()
@@ -299,6 +301,7 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.DOMove(newTile.Origin.position, _moveDelay);
+        _moveParticle.Play();
         AudioManager.Instance.PlaySFXSound(_move);
         yield return new WaitForSeconds(_moveDelay);
 
