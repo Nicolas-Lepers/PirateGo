@@ -6,8 +6,8 @@ public class PlayerAttack : MonoBehaviour
 {
     private MeleeArea _area;
 
-    [SerializeField] float DelayAttackMeleeHit = 0.5f;
-    [SerializeField] float DelayAttackRangeShoot = 0.5f;
+    [SerializeField] float _delayAttackMeleeHit = 1;
+    [SerializeField] float _delayAttackRangeShoot = 1;
 
     [SerializeField] AudioClip _pistol;
     [SerializeField] ParticleSystem _shot;
@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
         GameManager.Instance.Player.AnimatorRef.SetTrigger("attack_sword");
         GameManager.Instance.ManagerUIRef.WeaponMelee.interactable = false;
 
-        StartCoroutine(this.gameObject.AddComponent<Timer>().Execute(DelayAttackMeleeHit, AttackMelee));
+        StartCoroutine(this.gameObject.AddComponent<Timer>().Execute(_delayAttackMeleeHit, AttackMelee));
     }
     private void AttackMelee()
     {
@@ -36,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
         GameManager.Instance.Player.AnimatorRef.SetTrigger("attack_gun");
         GameManager.Instance.ManagerUIRef.WeaponRange.interactable = false;
 
-        StartCoroutine(this.gameObject.AddComponent<Timer>().Execute(DelayAttackRangeShoot, AttackRange));
+        StartCoroutine(this.gameObject.AddComponent<Timer>().Execute(_delayAttackRangeShoot, AttackRange));
     }
     private void AttackRange()
     {

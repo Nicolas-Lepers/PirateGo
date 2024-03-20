@@ -12,17 +12,17 @@ public class MainMenu : MonoBehaviour
 
     public GameObject Title;
 
-    public GameObject accueil;
-    public GameObject parameter;
-    public GameObject controls;
-    public GameObject credits;
+    public GameObject Accueil;
+    public GameObject Parameter;
+    public GameObject Controls;
+    public GameObject Credits;
 
     [SerializeField] AudioClip _musicMenu;
 
     //public List<Interface> buttons;
     private void Update()
     {
-        if (accueil.gameObject.activeInHierarchy == true)
+        if (Accueil.gameObject.activeInHierarchy == true)
             Title.SetActive(true);
         else
             Title.SetActive(false);
@@ -30,10 +30,10 @@ public class MainMenu : MonoBehaviour
     }
     private void Awake()
     {
-        accueil.SetActive(true);
-        parameter.SetActive(false);
-        controls.SetActive(false);
-        credits.SetActive(false);
+        Accueil.SetActive(true);
+        Parameter.SetActive(false);
+        Controls.SetActive(false);
+        Credits.SetActive(false);
     }
     private void Start()
     {
@@ -61,31 +61,31 @@ public class MainMenu : MonoBehaviour
 
     public void OnClickParameter()
     {
-        accueil.SetActive(false);
-        parameter.SetActive(true);
+        Accueil.SetActive(false);
+        Parameter.SetActive(true);
     }
     public void OnClickCredits()
     {
-        accueil.SetActive(false);
-        credits.SetActive(true);
+        Accueil.SetActive(false);
+        Credits.SetActive(true);
     }
     public void OnClickControls()
     {
-        controls.SetActive(true);
-        parameter.SetActive(false);
+        Controls.SetActive(true);
+        Parameter.SetActive(false);
     }
     public void OnClickReturn()
     {
-        if (controls.activeInHierarchy == true)
+        if (Controls.activeInHierarchy == true)
         {
-            controls.SetActive(!controls);
-            parameter.SetActive(true);
+            Controls.SetActive(!Controls);
+            Parameter.SetActive(true);
         }
         else
         {
-            accueil.SetActive(true);
-            credits.SetActive(false);
-            parameter.SetActive(false);
+            Accueil.SetActive(true);
+            Credits.SetActive(false);
+            Parameter.SetActive(false);
         }
     }
     public void OnClickLeave()

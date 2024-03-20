@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LevelSelection : MonoBehaviour
 {
     [SerializeField] Button _buttonSelection;
-    public Button ButtonSelection => _buttonSelection;
+
     public GameObject PreviousPath;
     public GameObject NextPath;
     [SerializeField] GameObject[] _stars;

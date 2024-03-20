@@ -12,7 +12,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip[] AudioClips;
 
-    [HideInInspector] public bool Coroutine = false;
+    public Coroutine CoroutineMusic;
+    public Coroutine CoroutineSFX;
     //public float step = 1f;
 
     public float MusicSliderValue;
@@ -56,8 +57,6 @@ public class AudioManager : MonoBehaviour
         AudioSourceSFX.PlayOneShot(clip);
     }
 
-    public Coroutine CoroutineMusic;
-    public Coroutine CoroutineSFX;
     public IEnumerator IEPlayMusicSound(string name)
     {
         AudioClip clip = GetClip(name);

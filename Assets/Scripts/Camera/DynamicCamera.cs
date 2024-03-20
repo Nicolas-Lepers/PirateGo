@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class DynamicCamera : MonoBehaviour
 {
-    public Transform target;
-    private Vector3 offset;
-    
-    public float smoothSpeed = 0.01f;
+    public Transform Target;
+    public float SmoothSpeed = 0.01f;
 
+
+    private Vector3 _offset;
     private void Start()
     {
-        offset = transform.position - target.position;
+        _offset = transform.position - Target.position;
     }
 
     private void LateUpdate()
     {
-        Vector3 targetPos = target.position + offset;
+        Vector3 targetPos = Target.position + _offset;
         Vector3 smoothFollow = Vector3.Lerp(transform.position,
-            targetPos, smoothSpeed * Time.deltaTime);
+            targetPos, SmoothSpeed * Time.deltaTime);
 
         transform.position = smoothFollow;
     }

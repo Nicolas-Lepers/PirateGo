@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] PathRenderer _path;
-
-
     [SerializeField] GameObject _currentLevel;
     [SerializeField] GameObject _firstLevel;
 
