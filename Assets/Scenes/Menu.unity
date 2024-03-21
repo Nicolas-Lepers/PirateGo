@@ -251,10 +251,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Title: {fileID: 1655263454}
-  accueil: {fileID: 904310435}
-  parameter: {fileID: 768950306}
-  controls: {fileID: 404186453}
-  credits: {fileID: 1144675013}
+  Accueil: {fileID: 904310435}
+  Parameter: {fileID: 768950306}
+  Controls: {fileID: 404186453}
+  Credits: {fileID: 1144675013}
   _musicMenu: {fileID: 8300000, guid: 7615299f0a1448b48aa64b74ee30b225, type: 3}
 --- !u!4 &120967619
 Transform:
@@ -927,7 +927,6 @@ MonoBehaviour:
   AudioClips:
   - {fileID: 8300000, guid: 023957e00e0b3874abb3bccc171e4cce, type: 3}
   - {fileID: 8300000, guid: 6a6c964d7f3ec7e4ead8b06a4809d30e, type: 3}
-  Coroutine: 0
   MusicSliderValue: 0.3
   SfxSliderValue: 0.5
 --- !u!4 &730479314
